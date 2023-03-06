@@ -1,6 +1,6 @@
 # BetCityDemo
 Task -
-    # we have two categories:
+    # As per your instruction we have two categories:
     
         1. Dubbele kans
         
@@ -25,7 +25,7 @@ Setup required to run this file:
 How to run this file:
 
     # Clone this repo.
-    
+    # Install python IDE
     # Run the python file
 
 # NOTE: - This program is having conditions of odd values as 1.11 for Dubbele kans and 1.15 for Ongeldig bij gelijkspel. These odd values might change on website. Due to this you might see else condition output. Please change those values according to you.
