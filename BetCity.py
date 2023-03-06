@@ -8,21 +8,20 @@ class BetCity():
         driver = webdriver.Chrome()
         driver.maximize_window()
         driver.get(baseURL)
-        time.sleep(10)
+        driver.implicitly_wait(5)
+
         cookies = driver.find_element(By.XPATH,"//button[@id='CybotCookiebotDialogBodyButtonAccept']")
         cookies.click()
 
         doubleChance = driver.find_element(By.XPATH,"(//div[@class='KambiBC-bet-offer-subcategory__container']/div/div/div[@class='KambiBC-outcomes-list__column']/button)[6]")
         doubleChanceText = doubleChance.text.split()[1]
-        print(doubleChance.text.split())
+
         voidOnATie = driver.find_element(By.XPATH,"(//div[@class='KambiBC-bet-offer-subcategory__container']/div/div/div[@class='KambiBC-outcomes-list__column']/button)[11]")
         voidOnATieText = voidOnATie.text.split()[1]
-        print(voidOnATie.text.split())
 
         if doubleChanceText == "1.11" and voidOnATieText == "1.15":
             doubleChance.click()
             voidOnATie.click()
-            time.sleep(10)
             xpath = driver.find_element(By.XPATH,"//input[@id='mod-KambiBC-betslip-stake-input-combination']")
             xpath.send_keys("0.1")
             time.sleep(10)
